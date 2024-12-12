@@ -1,6 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-# Create your views here.
 def index(request):
-    return HttpResponse("Welcome to Pampered Pets Parlor!")
+    return render(request, 'pampered_pet_parlor/index.html')  # Matches templates path
+
+def about(request):
+    return render(request, 'pampered_pet_parlor/about.html')
+
+def login(request):
+    return render(request, 'pampered_pet_parlor/login.html')
+
+def register(request):
+    return render(request, 'pampered_pet_parlor/register.html')
+
+def contact(request):
+    return render(request, 'pampered_pet_parlor/contact.html')
+
+def faq(request):
+    return render(request, 'pampered_pet_parlor/faq.html')
