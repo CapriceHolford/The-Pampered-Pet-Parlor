@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import BlogPost  # Import the BlogPost model for the blog view
 
 def index(request):
     return render(request, 'pampered_pet_parlor/index.html')  # Matches templates path
@@ -17,3 +18,8 @@ def contact(request):
 
 def faq(request):
     return render(request, 'pampered_pet_parlor/faq.html')
+
+def blog(request):
+    # Fetch all blog posts, ordered by the most recent first
+    posts = BlogPost.objects.all().order_by('-created_at')
+    return render(request, 'pampered_pet_parlor/blog.html', {'posts': posts})
