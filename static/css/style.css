@@ -12,3 +12,57 @@ body {
     color : #D81E5B;
     text-decoration : none;
     }
+
+/* Booking Page */
+
+/* Style the form container */
+.container {
+    margin-top: 50px;
+}
+
+/* Style the card */
+.card {
+    border-radius: 10px;
+}
+
+/* Add spacing between form elements */
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+/* Style the submit button */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Add a shadow to the form */
+.card.shadow-sm {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust text size for labels */
+.form-label {
+    font-size: 1.1rem;
+}
+
+/* Adjust text area size */
+textarea {
+    height: 120px;
+}
+
+/* Add a little padding to the form fields */
+.form-control {
+    padding: 10px;
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin: 0 15px;
+    }
+}
