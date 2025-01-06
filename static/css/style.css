@@ -228,3 +228,102 @@ footer {
     color: #ffffff; /* White color when hovering over the links */
     text-decoration: underline; /* Underline the links when hovered */
 }
+
+/* Contact Page */
+
+/* General styles for the contact page */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading style */
+.contact-heading {
+    text-align: center;
+    color: #007bff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Description text */
+.contact-description {
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Form styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual form group (label + input/textarea) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+.form-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Input field and textarea styles */
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border-color: #007bff;  /* Blue border on focus */
+    outline: none;
+}
+
+/* Button styles */
+.form-button {
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #218838;  /* Darker green on hover */
+}
+
+/* Add some margin to the form to separate from the edges */
+.contact-form {
+    margin-top: 20px;
+}
+
+/* Optional: Add some responsive design to make sure it looks good on smaller screens */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 15px;
+    }
+
+    .form-input, .form-textarea {
+        font-size: 0.9rem;
+    }
+
+    .form-button {
+        font-size: 1rem;
+    }
+}

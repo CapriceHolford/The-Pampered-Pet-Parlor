@@ -1,13 +1,14 @@
+# urls.py
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),  # Root URL of the app
-    path('about/', views.about, name='about'),   # About page
-    path('login/', views.login, name='login'),        # Login page
-    path('register/', views.register, name='register'),  # Register page
-    path('contact/', views.contact, name='contact'), # Contact page
-    path('faq/', views.faq, name='faq'),  # FAQ page
-    path('blog/', views.blog, name='blog'),  # Blog page
-    path('booking/', views.booking, name='booking'), #Booking page
+    path('', views.index, name='index'),
+    path('about/', views.about, name='about'),
+    path('login/', views.login, name='login'),
+    path('register/', views.register, name='register'),
+    path('contact/', views.contact_view, name='contact'),  
+    path('faq/', views.faq, name='faq'),
+    path('blog/', views.blog, name='blog'),
+    path('booking/', views.booking, name='booking'),
 ]
