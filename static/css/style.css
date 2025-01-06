@@ -159,3 +159,72 @@ footer {
     text-align: center;
     margin-top: 40px;
 }
+
+/* Accordion */ 
+
+.accordion-button {
+    background-color: #f0f0f0;
+    color: #D81E5B;
+    font-weight: bold;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-body {
+    background-color: #fafafa;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+}
+
+.accordion-item h3 {
+    margin-top: 30px;
+    color: #D81E5B;
+    font-size: 1.5rem;
+}
+
+
+/* Search Bar */
+#faqSearch {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Hidden Items for Search */
+.hidden {
+    display: none;
+}
+
+.sticky-cta {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 123, 255, 0.7);  /* Blue with 70% opacity */
+    color: white;
+    font-weight: bold; /* Make the text bold */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.sticky-cta a {
+    color: #f925b9; /* Set a different color for the links (yellow/orange) */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.sticky-cta a:hover {
+    color: #ffffff; /* White color when hovering over the links */
+    text-decoration: underline; /* Underline the links when hovered */
+}
