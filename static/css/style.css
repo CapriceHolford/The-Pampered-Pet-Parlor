@@ -66,3 +66,96 @@ textarea {
         margin: 0 15px;
     }
 }
+
+/* Cards */
+
+.image {
+    width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .card-header {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-family: 'lexend', sans-serif;
+    font-size: large;
+    text-align: left;
+  }
+  
+  .card-title {
+    font-size: larger;
+    text-align: center;
+    color: #800080;
+    font-weight: bold;
+  }
+  
+  .blockquote {
+    font-size: medium;
+  }
+
+  /* Hero Section Styling */
+.hero {
+    background-color: #f0f0f0;
+    padding: 60px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #e25c8e;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Service Item Styling */
+.service-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+}
+
+.service-text {
+    padding: 20px;
+}
+
+.service-text h3 {
+    color: #e25c8e;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-text ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.service-text li {
+    margin-bottom: 8px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f0c0f0;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}

@@ -1,7 +1,51 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home - The Pampered Pet Parlor{% endblock %}
 
 {% block content %}
-    <p>Welcome to the best pet grooming service in town!</p>
+<main>
+    <section class="hero">
+        <div class="container text-center">
+            <h1>The Pampered Pet Parlor</h1>
+            <p>Your pet's home away from home.</p>
+        </div>
+    </section>
+
+    <section class="services py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="service-item">
+                        <img src="{% static 'images/doggroom.jpg' %}" alt="Dog Grooming" class="img-fluid">
+                        <div class="service-text p-3">
+                            <h3>Full Groom</h3>
+                            <ul>
+                                <li>Luxurious Bath With Shampoo</li>
+                                <li>Custom Coat Cut & Styling</li>
+                                <li>Nail, Paw & Pad Trim</li>
+                                <li>Luxury Finishing Cologne Spritz</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="service-item">
+                        <img src="{% static 'images/catgroom.jpg' %}" alt="Cat Grooming" class="img-fluid">
+                        <div class="service-text p-3">
+                            <h3>Grooming Extras</h3>
+                            <ul>
+                                <li>Bath and Dry</li>
+                                <li>Puppy First Bath & Groom</li>
+                                <li>Nail Clip, Ear/Eye Clean & Trim</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 {% endblock %}
