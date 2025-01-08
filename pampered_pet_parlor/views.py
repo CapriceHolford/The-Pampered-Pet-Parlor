@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import BlogPost, Booking
 from .forms import BookingForm, ContactForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 # Index view
 def index(request):
@@ -13,11 +16,11 @@ def about(request):
 
 # Login page view
 def login(request):
-    return render(request, 'pampered_pet_parlor/login.html')
+    return render(request, 'account/login.html')
 
 # Register page view
 def register(request):
-    return render(request, 'pampered_pet_parlor/register.html')
+    return render(request, 'account/signup.html')
 
 # FAQ page view
 def faq(request):
@@ -95,3 +98,19 @@ def edit_appointment(request, booking_id):
 
 def profile(request):
     return render(request, 'pampered_pet_parlor/profile.html')  # Create a template for the profile page
+
+@login_required
+def profile(request):
+    # Get all bookings for the current user
+    bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'account/profile.html', {'bookings': bookings})
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save() # Save the user to the database
+            return redirect('login') # Redirect to login page
+        else:
+            form = UserCreationForm()
+            return render(request, 'account/signup.html', {'form': form})

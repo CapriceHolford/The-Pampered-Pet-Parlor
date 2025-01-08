@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.sites',
     'allauth',
+    'allauth.account',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'my_project.urls'
@@ -71,10 +73,21 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.csrf'
             ],
         },
     },
 ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'APP': {
+            'client_id': '0v23liM5jNdGxDHG563B',
+            'secret': '5abd10f05ce8c7600680251f22e1075b7cc7528d',
+            'key': ''
+        }
+    }
+}
 
 WSGI_APPLICATION = 'my_project.wsgi.application'
 
@@ -141,8 +154,16 @@ SITE_ID = 1
 # Email settings for development (prints emails to the console)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Redirect users to home or another page after successful login/signup
-LOGIN_REDIRECT_URL = '/'  
+# Email-related settings for Allauth
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATED_REDIRECT_URL = '/profile/'  # Redirect to the home page after logging in
 
-# Redirect authenticated users who try to access login/signup pages
-ACCOUNT_AUTHENTICATED_REDIRECT_URL = '/'  # Redirect already authenticated users to homepage or dashboard
+ACCOUNT_USERNAME_REQUIRED = True
+
+# Redirect users to home or another page after successful login/signup
+LOGIN_REDIRECT_URL = '/profile/'  
+
+ACCOUNT_LOGIN_ON_SIGNUP = True  # Automatically log users in after signup
+ACCOUNT_SESSION_REMEMBER = True  # Remember user login across sessions
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Redirect after signup
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
