@@ -25,7 +25,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = 'django-insecure-(&^f!**u8&tnmkzs-t*7$h9idf&@n7l%u%#$!_3yzc40)fe1cu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 
 ALLOWED_HOSTS = ['8000-capriceholf-thepampered-l24nb03lzz1.ws.codeinstitute-ide.net','.herokuapp.com',]
 
@@ -37,6 +37,8 @@ CSRF_TRUSTED_ORIGINS = [
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sites',
+    'allauth',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -132,3 +134,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configure the site ID for Allauth
+SITE_ID = 1
+
+# Email settings for development (prints emails to the console)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Redirect users to home or another page after successful login/signup
+LOGIN_REDIRECT_URL = '/'  
+
+# Redirect authenticated users who try to access login/signup pages
+ACCOUNT_AUTHENTICATED_REDIRECT_URL = '/'  # Redirect already authenticated users to homepage or dashboard

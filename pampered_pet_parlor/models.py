@@ -37,3 +37,19 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"Message from {self.name} - {self.email}"
+
+#Way to associate booking with user
+class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  # Link each booking to a user
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    breed = models.CharField(max_length=100, blank=True, null=True)
+    size = models.CharField(max_length=50, blank=True, null=True)
+    date = models.DateField()
+    time = models.TimeField()
+    service = models.CharField(max_length=50)
+    notes = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.service} on {self.date} at {self.time}"

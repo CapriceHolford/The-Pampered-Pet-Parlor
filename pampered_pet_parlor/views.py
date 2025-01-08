@@ -67,3 +67,31 @@ def contact_view(request):
         form = ContactForm()
 
     return render(request, 'pampered_pet_parlor/contact.html', {'form': form})
+
+def book_appointment(request):
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user  # Associate the booking with the logged-in user
+            booking.save()
+            return redirect('index')  # Redirect to a success page
+    else:
+        form = BookingForm()
+
+    return render(request, 'book_appointment.html', {'form': form})
+
+def edit_appointment(request, booking_id):
+    booking = Booking.objects.get(id=booking_id, user=request.user)  # Ensure only users can edit their bookings
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('index')  # Redirect after editing
+    else:
+        form = BookingForm(instance=booking)
+
+    return render(request, 'edit_appointment.html', {'form': form})
+
+def profile(request):
+    return render(request, 'pampered_pet_parlor/profile.html')  # Create a template for the profile page

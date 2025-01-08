@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('pampered_pet_parlor.urls')),  # Include app-level URLs
+     path('accounts/', include('allauth.urls')),  # ALlauth URLs for login/sign up
     path('admin/', admin.site.urls),               # Admin site
 ]
 
