@@ -313,7 +313,7 @@ footer {
     margin-top: 20px;
 }
 
-/* Optional: Add some responsive design to make sure it looks good on smaller screens */
+/* responsive design to make sure it looks good on smaller screens */
 @media (max-width: 768px) {
     .contact-container {
         padding: 15px;
@@ -326,4 +326,44 @@ footer {
     .form-button {
         font-size: 1rem;
     }
+}
+
+/* login page styling */
+
+.login-page .container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.login-page button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+.login-page h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* sign up page styling */
+
+.signup-page .container {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.signup-page button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+}
+
+.signup-page h2 {
+    color: #333;
+    text-align: center;
 }

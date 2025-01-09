@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # BlogPost Model
 class BlogPost(models.Model):
@@ -53,3 +55,30 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.service} on {self.date} at {self.time}"
+
+class PetProfile(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Remove unique=True
+    name = models.CharField(max_length=100)
+    breed = models.CharField(max_length=100)
+    age = models.IntegerField()
+    photo = models.ImageField(upload_to='pet_photos/', blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.breed})"
+
+# UserProfile Model
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=20, blank=True)
+
+    def __str__(self):
+        return self.user.username
+
+# Signal to create or update UserProfile when the User object is saved
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """Signal handler to create or update the UserProfile when the User is created or updated."""
+    if created:
+        UserProfile.objects.create(user=instance)
+    else:
+        instance.userprofile.save()  # If user is updated, update the profile as well.
