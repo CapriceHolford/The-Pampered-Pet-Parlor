@@ -367,3 +367,102 @@ footer {
     color: #333;
     text-align: center;
 }
+
+/* Basic Styling for About Page */
+.container {
+    background-color: #f8f9fa;
+}
+
+h2, h3 {
+    color: #D81E5B;
+}
+
+.section {
+    padding: 40px 0;
+}
+
+section h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+img.img-fluid {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for Meet the Team */
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.col-md-4 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.col-md-4 img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.btn-primary {
+    background-color: #D81E5B;
+    border-color: #D81E5B;
+}
+
+.btn-primary:hover {
+    background-color: #C11842;
+    border-color: #C11842;
+}
+
+.intro-img {
+    width: 80%; /* Adjust the width to a percentage of the parent container */
+    height: auto; /* Adjust height proportionally to the width */
+    object-fit: cover; /* Or use contain if you want the entire image to fit without cropping */
+    max-width: 600px; /* Optional: Add a max-width to prevent it from becoming too large */
+}
+
+.center-text {
+    text-align: center;  /* This will center all text within the container */
+}
+
+.center-content {
+    text-align: center;  /* Center text horizontally */
+    display: block;
+    margin: 0 auto;      /* Center the image */
+    max-width: 100%;     /* Ensure the image fits the container */
+}
+
+ul {
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0; /* Removes default padding */
+}
+
+ul li {
+    margin-bottom: 10px; /* Optional: add some space between the items */
+}
+
+/* Add hover effect to the button */
+.btn-success {
+    background-color: #28a745; /* Initial background color */
+    border-color: #28a745;
+    color: white;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn-success:hover {
+    background-color: #063d12; /* Darker green when hovered */
+    border-color: #063d12;
+    transform: scale(1.05); /* Slightly increase the size on hover */
+}

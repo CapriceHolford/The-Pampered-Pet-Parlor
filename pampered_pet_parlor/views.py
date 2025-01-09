@@ -145,6 +145,9 @@ def change_password(request):
 
 @login_required
 def profile(request):
+    # Check if the user has clicked "Edit Profile"
+    edit_mode = request.GET.get('edit', False)
+    
     if request.method == 'POST':
         # Handle form submissions for editing profile
         profile_form = EditProfileForm(request.POST, instance=request.user)
@@ -153,19 +156,18 @@ def profile(request):
         if profile_form.is_valid() and phone_form.is_valid():
             profile_form.save()  # Save the updated profile data
             # Save phone number to the user's profile or a separate model if needed
-            user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+            user_profile = request.user.userprofile
             user_profile.phone = phone_form.cleaned_data['phone']
             user_profile.save()
-            return redirect('profile')
+            return redirect('profile')  # Redirect to the same page after saving
     else:
         profile_form = EditProfileForm(instance=request.user)
-        # Load the user's phone number from the profile (if it exists)
-        user_profile = UserProfile.objects.filter(user=request.user).first()
-        phone_form = ChangePhoneForm(initial={'phone': user_profile.phone if user_profile else ''})
+        phone_form = ChangePhoneForm(initial={'phone': request.user.userprofile.phone})
 
     return render(request, 'account/profile.html', {
         'profile_form': profile_form,
         'phone_form': phone_form,
+        'edit_mode': edit_mode,  # Pass edit_mode flag to the template
     })
 
 @login_required
