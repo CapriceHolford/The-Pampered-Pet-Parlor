@@ -18,10 +18,6 @@ def about(request):
 def login(request):
     return render(request, 'account/login.html')
 
-# Register page view
-def register(request):
-    return render(request, 'account/signup.html')
-
 # FAQ page view
 def faq(request):
     return render(request, 'pampered_pet_parlor/faq.html')
@@ -96,21 +92,8 @@ def edit_appointment(request, booking_id):
 
     return render(request, 'edit_appointment.html', {'form': form})
 
-def profile(request):
-    return render(request, 'pampered_pet_parlor/profile.html')  # Create a template for the profile page
-
 @login_required
 def profile(request):
     # Get all bookings for the current user
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'account/profile.html', {'bookings': bookings})
-
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save() # Save the user to the database
-            return redirect('login') # Redirect to login page
-        else:
-            form = UserCreationForm()
-            return render(request, 'account/signup.html', {'form': form})
