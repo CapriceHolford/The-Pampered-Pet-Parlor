@@ -1,23 +1,49 @@
 {% extends "base.html" %}
 
-{% block title %}Blog{% endblock %}
+{% block title %}Our Blog{% endblock %}
 
 {% block content %}
-<h2>Our Blog</h2>
-<p>Check out our recent grooms!</p>
-
-<div class="blog-posts">
-    {% for post in posts %}
-    <div class="blog-post">
-        <h3>{{ post.title }}</h3>
-        <p><small>By {{ post.author.username }} on {{ post.created_at|date:"F j, Y" }}</small></p>
-        {% if post.image %}
-        <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto;">
-        {% endif %}
-        <p>{{ post.content|truncatewords:30 }}</p>
-        <a href="#">Read More</a>
+<div class="container py-5">
+    <h2 class="text-center mb-4">Our Blog</h2>
+    <p class="text-center">Check out our recent grooms!</p>
+    
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                {% if post.image %}
+                <img src="{{ post.image.url }}" class="card-img-top blog-post-image" alt="{{ post.title }}">
+                {% else %}
+                <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Placeholder Image">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.content|truncatewords:40 }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <small>Posted on {{ post.created_at|date:"F j, Y" }} by {{ post.author.username }}</small>
+                    <a href="{% url 'blog_detail' post.id %}" class="btn btn-primary float-end">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    <hr>
-    {% endfor %}
+    
+    <!-- Pagination (if necessary) -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if posts.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ posts.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="current">
+                Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+            </span>
+            {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}">next</a>
+                <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 </div>
 {% endblock %}

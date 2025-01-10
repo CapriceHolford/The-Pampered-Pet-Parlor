@@ -466,3 +466,169 @@ ul li {
     border-color: #063d12;
     transform: scale(1.05); /* Slightly increase the size on hover */
 }
+
+/* Blog */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Blog post hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Card body and image adjustments */
+.card-body {
+    background-color: #f9f9f9;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Card footer */
+.card-footer {
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    margin: 0 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    color: #007bff;
+}
+
+.pagination .current {
+    font-weight: bold;
+    color: #d81e5b;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Make blog post images smaller */
+.blog-post-image {
+    width: 100%;         /* Set width to 100% to make it responsive */
+    max-width: 500px;    /* Limit the maximum width of the image */
+    height: auto;        /* Maintain aspect ratio */
+    margin: 0 auto;      /* Center the image */
+    display: block;      /* Make it a block element to center it */
+}
+
+/* General Styles for Blog Detail Page */
+.blog-detail-container {
+    max-width: 800px;          /* Limit the width of the blog content */
+    margin: 0 auto;            /* Center the content */
+    padding: 20px;             /* Add padding to the content */
+    background-color: #f9f9f9; /* Light background color for readability */
+    border-radius: 8px;        /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Light shadow for depth */
+}
+
+/* Title Styling */
+.blog-title {
+    font-size: 2.5rem;         /* Larger font size for the title */
+    font-weight: bold;         /* Make the title bold */
+    color: #D81E5B;            /* Matching the primary color */
+    margin-bottom: 20px;       /* Space below the title */
+}
+
+/* Date and Author Styling */
+.blog-meta {
+    font-size: 1rem;           /* Slightly smaller text for the meta information */
+    color: #555;               /* Dark grey for readability */
+    margin-bottom: 20px;       /* Space below meta info */
+}
+
+.blog-meta small {
+    font-style: italic;        /* Make the meta text italic */
+}
+
+/* Image Styling */
+.blog-detail-container img {
+    width: 100%;               /* Ensure the image is responsive */
+    max-width: 600px;          /* Limit the maximum width of the image */
+    height: auto;              /* Maintain the aspect ratio */
+    border-radius: 8px;        /* Rounded corners for the images */
+    margin: 20px 0;            /* Space above and below the image */
+    display: block;            /* Center the image */
+    margin-left: auto;         /* Auto margin for centering */
+    margin-right: auto;        /* Auto margin for centering */
+}
+
+/* Blog Content Styling */
+.blog-content {
+    font-size: 1.1rem;         /* Slightly larger font size for the content */
+    line-height: 1.6;          /* More space between lines for readability */
+    color: #555;               /* Dark grey text for content */
+    margin-bottom: 40px;       /* Space below content */
+}
+
+/* Styling for "Read More" Links */
+.read-more-link {
+    color: #007bff;            /* Blue color for links */
+    text-decoration: none;     /* Remove underline */
+    font-weight: bold;         /* Make the link bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.read-more-link:hover {
+    color: #0056b3;            /* Darker blue on hover */
+    text-decoration: underline; /* Underline the link on hover */
+}
+
+/* Button for Editing or Deleting the Post (optional) */
+.blog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.blog-actions .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #D81E5B;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blog-actions .btn:hover {
+    background-color: #C11842;   /* Darker red on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .blog-detail-container {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .blog-title {
+        font-size: 2rem; /* Smaller font size for the title */
+    }
+
+    .blog-meta {
+        font-size: 0.9rem; /* Smaller font size for meta info */
+    }
+}

@@ -245,3 +245,7 @@ def edit_booking(request, booking_id):
         form = BookingForm(instance=booking)
 
     return render(request, 'edit_appointment.html', {'form': form})
+
+def blog_detail(request, post_id):
+    post = get_object_or_404(BlogPost, id=post_id)  # Retrieve the blog post by its ID
+    return render(request, 'account/blog_detail.html', {'post': post})
