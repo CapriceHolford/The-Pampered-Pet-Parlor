@@ -67,6 +67,30 @@ textarea {
     }
 }
 
+#booking-form-container {
+    background-color: #4ab4e9; /* Blue background specific to the booking form */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
+}
+
+/* Style the card for booking form */
+#booking-form-container .card {
+    background-color: #ffffff; /* Card background color */
+}
+
+/* Add a hover effect for buttons in booking form */
+#booking-form-container .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Other styles for booking form */
+#booking-form-container .form-control {
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
 /* Cards */
 
 .image {
@@ -101,18 +125,43 @@ textarea {
   /* Hero Section Styling */
 .hero {
     background-color: #f0f0f0;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
+/* Hero Text Styling */
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Larger font size */
     color: #e25c8e;
     font-weight: bold;
+    margin-bottom: 20px; /* Space below the title */
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Increased font size */
     color: #555;
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+/* Button Styling */
+.cta-btn1 {
+    background-color: #ffffff; /* White background for the button */
+    color: #D81E5B; /* Text color matching the section */
+    padding: 15px 40px; /* Larger button with padding */
+    font-size: 1.2rem; /* Larger font for the button */
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none; /* Remove underline */
+    margin-top: 20px; /* Add space above the button */
+}
+
+.cta-btn1:hover {
+    background-color: #D81E5B; /* Button background changes on hover */
+    color: #ffffff; /* Text color changes on hover */
+    transform: scale(1.05); /* Slight increase in size for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect when hovered */
 }
 
 /* Service Item Styling */
@@ -630,5 +679,91 @@ ul li {
 
     .blog-meta {
         font-size: 0.9rem; /* Smaller font size for meta info */
+    }
+}
+
+/* Index Call to Action */
+
+/* Call to Action Section Styling */
+.cta-section1 {
+    background-color: #D81E5B; /* Bright background color for attention */
+    padding: 50px 20px; /* Adjust padding for top and bottom */
+    text-align: center; /* Center align text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    margin: 50px 0; /* Space from other sections */
+}
+
+/* Headline Styling */
+.cta-section1 h2 {
+    font-size: 2.5rem; /* Larger font for the main header */
+    color: #ffffff; /* White color for contrast */
+    margin-bottom: 20px; /* Space below the heading */
+    font-weight: bold;
+}
+
+/* Subheading Styling */
+.cta-section1 p {
+    font-size: 1.2rem;
+    color: #f0f0f0; /* Light color for the text */
+    margin-bottom: 30px; /* Space below the paragraph */
+    font-weight: 400;
+}
+
+/* Button Styling */
+.cta-btn1 {
+    background-color: #ffffff; /* White background for the button */
+    color: #D81E5B; /* Text color matching the section */
+    padding: 15px 40px; /* Larger button with padding */
+    font-size: 1.2rem; /* Larger font for the button */
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none; /* Remove underline */
+}
+
+.cta-btn1:hover {
+    background-color: #D81E5B; /* Button background changes on hover */
+    color: #ffffff; /* Text color changes on hover */
+    transform: scale(1.05); /* Slight increase in size for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect when hovered */
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 60px 0;
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    color: #333;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Carousel Control Buttons */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #D81E5B; /* Red color for control buttons */
+}
+
+.carousel-control-prev, .carousel-control-next {
+    color: #D81E5B;
+}
+
+/* Styling for the container to ensure the carousel is centered and clean */
+.carousel-inner {
+    text-align: center;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Making sure the carousel text looks good on mobile */
+@media (max-width: 768px) {
+    .testimonial-text {
+        font-size: 1rem;
     }
 }

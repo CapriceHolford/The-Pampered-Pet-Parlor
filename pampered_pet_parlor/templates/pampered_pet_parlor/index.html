@@ -5,13 +5,16 @@
 
 {% block content %}
 <main>
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container text-center">
             <h1>The Pampered Pet Parlor</h1>
             <p>Your pet's home away from home.</p>
+            <a href="{% url 'booking' %}" class="btn btn-primary">Book Now</a>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services py-5">
         <div class="container">
             <h2 class="text-center mb-5">Our Services</h2>
@@ -46,6 +49,56 @@
                 </div>
             </div>
         </div>
+
+    </section>
+
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Customer Testimonials</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <!-- 2000 ms = 2 seconds -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p class="testimonial-text">"The grooming service was exceptional! My dog looks so happy and
+                            clean. Highly recommend!" - Sarah</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="testimonial-text">"I was so impressed with the care my cat received during her bath
+                            and trim. Great service!" - John</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="testimonial-text">"Amazing! The staff is friendly and really understands how to make
+                            my pet feel comfortable!" - Emily</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="testimonial-text">"The grooming exceeded my expectations. My dog is always treated
+                            with care and love!" - Michael</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="testimonial-text">"Best grooming experience we've had! Our pet feels and looks
+                            fantastic!" - Karen</p>
+                    </div>
+                </div>
+                <!-- Controls (optional) -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action for Booking -->
+    <section class="cta-section1">
+        <h2>Ready to Pamper Your Pet?</h2>
+        <p>Book a grooming appointment today and give your pet the love they deserve!</p>
+        <a href="{% url 'booking' %}" class="cta-btn1">Book Now</a>
     </section>
 </main>
 {% endblock %}
