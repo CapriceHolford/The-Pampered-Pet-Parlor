@@ -21,6 +21,8 @@ def send_welcome_email(sender, request, user, **kwargs):
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
-        UserProfile.objects.create(user=instance)
+        # This will ensure that the profile is created only once per user
+        UserProfile.objects.get_or_create(user=instance)
     else:
-        instance.userprofile.save()  # If the user is updated, update the profile as well
+        # If the user was updated, update their profile
+        instance.userprofile.save()

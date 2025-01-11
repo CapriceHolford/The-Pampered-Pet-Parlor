@@ -6,6 +6,10 @@ from .models import BlogPost, Booking, PetProfile, UserProfile
 from .forms import BookingForm, ContactForm, PetProfileForm, ChangeEmailForm, CustomPasswordChangeForm, EditProfileForm, ChangePhoneForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.dispatch import receiver 
+from django.contrib.auth.signals import user_logged_in, user_logged_out
+from django.contrib import messages
+from django.db.models.signals import post_save
 
 # Index view
 def index(request):
@@ -67,6 +71,16 @@ def contact_view(request):
         form = ContactForm()
 
     return render(request, 'pampered_pet_parlor/contact.html', {'form': form})
+
+def login_view(request):
+    # Your login logic
+    if user_logged_in:
+        messages.success(request, "Welcome back!")
+    return redirect('profile')
+
+def logout_view(request):
+    messages.success(request, "Goodbye!")
+    return redirect('home')
 
 @login_required
 def book_appointment(request):
@@ -249,3 +263,13 @@ def edit_booking(request, booking_id):
 def blog_detail(request, post_id):
     post = get_object_or_404(BlogPost, id=post_id)  # Retrieve the blog post by its ID
     return render(request, 'account/blog_detail.html', {'post': post})
+
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    # Check if the user has a profile and create one if not
+    if created:
+        UserProfile.objects.get_or_create(user=instance)  # This ensures no duplicate profile
+    else:
+        instance.userprofile.save()
+
