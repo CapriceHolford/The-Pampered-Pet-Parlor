@@ -126,12 +126,6 @@ def edit_appointment(request, booking_id):
     return render(request, 'edit_appointment.html', {'form': form})
 
 @login_required
-def profile(request):
-    # Get all bookings for the current user
-    bookings = Booking.objects.filter(user=request.user)
-    return render(request, 'account/profile.html', {'bookings': bookings})
-
-@login_required
 def change_email(request):
     if request.method == 'POST':
         form = ChangeEmailForm(request.POST)
@@ -158,33 +152,6 @@ def change_password(request):
     return render(request, 'account/change_password.html', {'form': form})
 
 @login_required
-def profile(request):
-    # Check if the user has clicked "Edit Profile"
-    edit_mode = request.GET.get('edit', False)
-    
-    if request.method == 'POST':
-        # Handle form submissions for editing profile
-        profile_form = EditProfileForm(request.POST, instance=request.user)
-        phone_form = ChangePhoneForm(request.POST)
-
-        if profile_form.is_valid() and phone_form.is_valid():
-            profile_form.save()  # Save the updated profile data
-            # Save phone number to the user's profile or a separate model if needed
-            user_profile = request.user.userprofile
-            user_profile.phone = phone_form.cleaned_data['phone']
-            user_profile.save()
-            return redirect('profile')  # Redirect to the same page after saving
-    else:
-        profile_form = EditProfileForm(instance=request.user)
-        phone_form = ChangePhoneForm(initial={'phone': request.user.userprofile.phone})
-
-    return render(request, 'account/profile.html', {
-        'profile_form': profile_form,
-        'phone_form': phone_form,
-        'edit_mode': edit_mode,  # Pass edit_mode flag to the template
-    })
-
-@login_required
 def add_pet_profile(request):
     if request.method == 'POST':
         form = PetProfileForm(request.POST)
@@ -196,16 +163,6 @@ def add_pet_profile(request):
     else:
         form = PetProfileForm()
     return render(request, 'account/add_pet_profile.html', {'form': form})
-
-@login_required
-def profile(request):
-    # Fetch all pet profiles for the logged-in user (if they exist)
-    pet_profiles = PetProfile.objects.filter(user=request.user)
-    bookings = Booking.objects.filter(user=request.user)
-    return render(request, 'account/profile.html', {
-        'pet_profiles': pet_profiles,  # Passing the pet profiles here
-        'bookings': bookings,
-    })
 
 @login_required
 def edit_pet_profile(request, pet_id):
@@ -271,5 +228,62 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.get_or_create(user=instance)  # This ensures no duplicate profile
     else:
-        instance.userprofile.save()
+        instance.profile.save()
 
+@login_required
+def profile(request):
+    # Check if the user has clicked "Edit Profile"
+    edit_mode = request.GET.get('edit', False)
+
+    if request.method == 'POST':
+        # Handle form submissions for editing profile
+        profile_form = EditProfileForm(request.POST, instance=request.user)
+        phone_form = ChangePhoneForm(request.POST)
+
+        if profile_form.is_valid() and phone_form.is_valid():
+            profile_form.save()  # Save the updated profile data
+            # Save phone number to the user's profile
+            user_profile = request.user.profile  # Changed to match the model's related_name
+            user_profile.phone = phone_form.cleaned_data['phone']
+            user_profile.save()
+            return redirect('profile')  # Redirect to avoid re-submitting the form
+
+    else:
+        # Prepopulate forms with existing data
+        profile_form = EditProfileForm(instance=request.user)
+        phone_form = ChangePhoneForm(initial={'phone': request.user.profile.phone})  # Adjusted related_name
+
+    # Fetch pet profiles and bookings for display
+    pet_profiles = PetProfile.objects.filter(user=request.user)
+    bookings = Booking.objects.filter(user=request.user)
+
+    return render(request, 'account/profile.html', {
+        'profile_form': profile_form,
+        'phone_form': phone_form,
+        'edit_mode': edit_mode,
+        'pet_profiles': pet_profiles,
+        'bookings': bookings,
+    })
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        profile_form = EditProfileForm(request.POST, instance=request.user)
+        phone_form = ChangePhoneForm(request.POST)
+
+        if profile_form.is_valid() and phone_form.is_valid():
+            profile_form.save()
+            user_profile = request.user.profile  # Use the correct related_name
+            user_profile.phone = phone_form.cleaned_data['phone']
+            user_profile.save()
+
+            messages.success(request, "Your profile has been updated successfully.")
+            return redirect('profile')
+    else:
+        profile_form = EditProfileForm(instance=request.user)
+        phone_form = ChangePhoneForm(initial={'phone': request.user.profile.phone})
+
+    return render(request, 'pampered_pet_parlor/edit_profile.html', {
+    'profile_form': profile_form,
+    'phone_form': phone_form,
+})

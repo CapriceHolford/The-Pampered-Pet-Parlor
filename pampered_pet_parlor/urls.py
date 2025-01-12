@@ -20,10 +20,10 @@ urlpatterns = [
     path('profile/change-password/', views.change_password, name='change_password'),
     path('profile/add-pet/', views.add_pet_profile, name='add_pet_profile'),
     path('profile/edit-pet/<int:pet_id>/', views.edit_pet_profile, name='edit_pet_profile'),
+     path('profile/edit/', views.edit_profile, name='edit_profile'),
     path('delete-booking/<int:booking_id>/', views.delete_booking, name='delete_booking'),
     path('profile/delete-pet/<int:pet_id>/', views.delete_pet_profile, name='delete_pet_profile'),
     path('profile/book-appointment/', views.book_appointment, name='book_appointment'),
     path('blog/<int:post_id>/', views.blog_detail, name='blog_detail'),
-    #path('edit-booking/<int:booking_id>/', views.edit-booking, name='edit-booking')
 ]
 

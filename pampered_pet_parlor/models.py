@@ -15,21 +15,6 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
-# Booking Model
-class Booking(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    phone = models.CharField(max_length=15)
-    breed = models.CharField(max_length=100, blank=True, null=True)
-    size = models.CharField(max_length=50, blank=True, null=True)
-    date = models.DateField()
-    time = models.TimeField()
-    service = models.CharField(max_length=50)
-    notes = models.TextField(blank=True, null=True)
-
-    def __str__(self):
-        return f"{self.name} - {self.service} on {self.date} at {self.time}"
-
 # ContactMessage Model
 class ContactMessage(models.Model):
     name = models.CharField(max_length=100)
@@ -42,7 +27,7 @@ class ContactMessage(models.Model):
 
 #Way to associate booking with user
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  # Link each booking to a user
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link each booking to a user
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=15)
@@ -68,7 +53,7 @@ class PetProfile(models.Model):
 
 # UserProfile Model
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     phone = models.CharField(max_length=20, blank=True)
 
     def __str__(self):
@@ -77,8 +62,11 @@ class UserProfile(models.Model):
 # Signal to create or update UserProfile when the User object is saved
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
-    """Signal handler to create or update the UserProfile when the User is created or updated."""
     if created:
         UserProfile.objects.create(user=instance)
     else:
-        instance.userprofile.save()  # If user is updated, update the profile as well.
+        # Safely update or create the profile
+        try:
+            instance.profile.save()
+        except UserProfile.DoesNotExist:
+            UserProfile.objects.create(user=instance)
