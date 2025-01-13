@@ -13,9 +13,21 @@ body {
     text-decoration : none;
     }
 
+/* Booking Page */
+
 /* Style the form container */
 .container {
     margin-top: 50px;
+}
+
+/* Style the card */
+.card {
+    border-radius: 10px;
+}
+
+/* Add spacing between form elements */
+.mb-3 {
+    margin-bottom: 1.5rem;
 }
 
 /* Style the submit button */
@@ -23,6 +35,92 @@ body {
     background-color: #007bff;
     border-color: #007bff;
 }
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Add a shadow to the form */
+.card.shadow-sm {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust text size for labels */
+.form-label {
+    font-size: 1.1rem;
+}
+
+/* Adjust text area size */
+textarea {
+    height: 120px;
+}
+
+/* Add a little padding to the form fields */
+.form-control {
+    padding: 10px;
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin: 0 15px;
+    }
+}
+
+#booking-form-container {
+    background-color: #4ab4e9; /* Blue background specific to the booking form */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add some shadow for depth */
+}
+
+/* Style the card for booking form */
+#booking-form-container .card {
+    background-color: #ffffff; /* Card background color */
+}
+
+/* Add a hover effect for buttons in booking form */
+#booking-form-container .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Other styles for booking form */
+#booking-form-container .form-control {
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+/* Cards */
+
+.image {
+    width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .card-header {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-family: 'lexend', sans-serif;
+    font-size: large;
+    text-align: left;
+  }
+  
+  .card-title {
+    font-size: larger;
+    text-align: center;
+    color: #800080;
+    font-weight: bold;
+  }
+  
+  .blockquote {
+    font-size: medium;
+  }
 
   /* Hero Section Styling */
 .hero {
@@ -59,6 +157,13 @@ body {
     margin-top: 20px; /* Add space above the button */
 }
 
+.cta-btn1:hover {
+    background-color: #D81E5B; /* Button background changes on hover */
+    color: #ffffff; /* Text color changes on hover */
+    transform: scale(1.05); /* Slight increase in size for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect when hovered */
+}
+
 /* Service Item Styling */
 .service-item {
     background-color: #fff;
@@ -66,6 +171,10 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
 }
 
 .service-item img {
@@ -100,6 +209,214 @@ footer {
     margin-top: 40px;
 }
 
+/* Accordion */ 
+
+.accordion-button {
+    background-color: #f0f0f0;
+    color: #D81E5B;
+    font-weight: bold;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-body {
+    background-color: #fafafa;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+}
+
+.accordion-item h3 {
+    margin-top: 30px;
+    color: #D81E5B;
+    font-size: 1.5rem;
+}
+
+
+/* Search Bar */
+#faqSearch {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Hidden Items for Search */
+.hidden {
+    display: none;
+}
+
+.sticky-cta {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 123, 255, 0.7);  /* Blue with 70% opacity */
+    color: white;
+    font-weight: bold; /* Make the text bold */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.sticky-cta a {
+    color: #f925b9; /* Set a different color for the links (yellow/orange) */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.sticky-cta a:hover {
+    color: #ffffff; /* White color when hovering over the links */
+    text-decoration: underline; /* Underline the links when hovered */
+}
+
+/* Contact Page */
+
+/* General styles for the contact page */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading style */
+.contact-heading {
+    text-align: center;
+    color: #007bff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Description text */
+.contact-description {
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Form styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual form group (label + input/textarea) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+.form-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Input field and textarea styles */
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border-color: #007bff;  /* Blue border on focus */
+    outline: none;
+}
+
+/* Button styles */
+.form-button {
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #218838;  /* Darker green on hover */
+}
+
+/* Add some margin to the form to separate from the edges */
+.contact-form {
+    margin-top: 20px;
+}
+
+/* responsive design to make sure it looks good on smaller screens */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 15px;
+    }
+
+    .form-input, .form-textarea {
+        font-size: 0.9rem;
+    }
+
+    .form-button {
+        font-size: 1rem;
+    }
+}
+
+/* login page styling */
+
+.login-page .container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.login-page button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+.login-page h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* sign up page styling */
+
+.signup-page .container {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.signup-page button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+}
+
+.signup-page h2 {
+    color: #333;
+    text-align: center;
+}
+
 /* Basic Styling for About Page */
 .container {
     background-color: #f8f9fa;
@@ -107,6 +424,10 @@ footer {
 
 h2, h3 {
     color: #D81E5B;
+}
+
+.section {
+    padding: 40px 0;
 }
 
 section h3 {
@@ -132,11 +453,45 @@ img.img-fluid {
     justify-content: center;
 }
 
+.col-md-4 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.col-md-4 img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
 .btn-primary {
     background-color: #D81E5B;
     border-color: #D81E5B;
 }
 
+.btn-primary:hover {
+    background-color: #C11842;
+    border-color: #C11842;
+}
+
+.intro-img {
+    width: 80%; /* Adjust the width to a percentage of the parent container */
+    height: auto; /* Adjust height proportionally to the width */
+    object-fit: cover; /* Or use contain if you want the entire image to fit without cropping */
+    max-width: 600px; /* Optional: Add a max-width to prevent it from becoming too large */
+}
+
+.center-text {
+    text-align: center;  /* This will center all text within the container */
+}
+
+.center-content {
+    text-align: center;  /* Center text horizontally */
+    display: block;
+    margin: 0 auto;      /* Center the image */
+    max-width: 100%;     /* Ensure the image fits the container */
+}
 
 ul {
     list-style-type: none; /* Removes bullet points */
@@ -147,7 +502,187 @@ ul li {
     margin-bottom: 10px; /* Optional: add some space between the items */
 }
 
+/* Add hover effect to the button */
+.btn-success {
+    background-color: #28a745; /* Initial background color */
+    border-color: #28a745;
+    color: white;
+    transition: all 0.3s ease; /* Smooth transition */
+}
 
+.btn-success:hover {
+    background-color: #063d12; /* Darker green when hovered */
+    border-color: #063d12;
+    transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+/* Blog */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Blog post hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Card body and image adjustments */
+.card-body {
+    background-color: #f9f9f9;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Card footer */
+.card-footer {
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    margin: 0 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    color: #007bff;
+}
+
+.pagination .current {
+    font-weight: bold;
+    color: #d81e5b;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Make blog post images smaller */
+.blog-post-image {
+    width: 100%;         /* Set width to 100% to make it responsive */
+    max-width: 500px;    /* Limit the maximum width of the image */
+    height: auto;        /* Maintain aspect ratio */
+    margin: 0 auto;      /* Center the image */
+    display: block;      /* Make it a block element to center it */
+}
+
+/* General Styles for Blog Detail Page */
+.blog-detail-container {
+    max-width: 800px;          /* Limit the width of the blog content */
+    margin: 0 auto;            /* Center the content */
+    padding: 20px;             /* Add padding to the content */
+    background-color: #f9f9f9; /* Light background color for readability */
+    border-radius: 8px;        /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Light shadow for depth */
+}
+
+/* Title Styling */
+.blog-title {
+    font-size: 2.5rem;         /* Larger font size for the title */
+    font-weight: bold;         /* Make the title bold */
+    color: #D81E5B;            /* Matching the primary color */
+    margin-bottom: 20px;       /* Space below the title */
+}
+
+/* Date and Author Styling */
+.blog-meta {
+    font-size: 1rem;           /* Slightly smaller text for the meta information */
+    color: #555;               /* Dark grey for readability */
+    margin-bottom: 20px;       /* Space below meta info */
+}
+
+.blog-meta small {
+    font-style: italic;        /* Make the meta text italic */
+}
+
+/* Image Styling */
+.blog-detail-container img {
+    width: 100%;               /* Ensure the image is responsive */
+    max-width: 600px;          /* Limit the maximum width of the image */
+    height: auto;              /* Maintain the aspect ratio */
+    border-radius: 8px;        /* Rounded corners for the images */
+    margin: 20px 0;            /* Space above and below the image */
+    display: block;            /* Center the image */
+    margin-left: auto;         /* Auto margin for centering */
+    margin-right: auto;        /* Auto margin for centering */
+}
+
+/* Blog Content Styling */
+.blog-content {
+    font-size: 1.1rem;         /* Slightly larger font size for the content */
+    line-height: 1.6;          /* More space between lines for readability */
+    color: #555;               /* Dark grey text for content */
+    margin-bottom: 40px;       /* Space below content */
+}
+
+/* Styling for "Read More" Links */
+.read-more-link {
+    color: #007bff;            /* Blue color for links */
+    text-decoration: none;     /* Remove underline */
+    font-weight: bold;         /* Make the link bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.read-more-link:hover {
+    color: #0056b3;            /* Darker blue on hover */
+    text-decoration: underline; /* Underline the link on hover */
+}
+
+/* Button for Editing or Deleting the Post (optional) */
+.blog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.blog-actions .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #D81E5B;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blog-actions .btn:hover {
+    background-color: #C11842;   /* Darker red on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .blog-detail-container {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .blog-title {
+        font-size: 2rem; /* Smaller font size for the title */
+    }
+
+    .blog-meta {
+        font-size: 0.9rem; /* Smaller font size for meta info */
+    }
+}
+
+/* Index Call to Action */
 
 /* Call to Action Section Styling */
 .cta-section1 {
@@ -189,6 +724,13 @@ ul li {
     text-decoration: none; /* Remove underline */
 }
 
+.cta-btn1:hover {
+    background-color: #D81E5B; /* Button background changes on hover */
+    color: #ffffff; /* Text color changes on hover */
+    transform: scale(1.05); /* Slight increase in size for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect when hovered */
+}
+
 /* Testimonials Section */
 .testimonials {
     background-color: #f9f9f9; /* Light grey background */
@@ -222,163 +764,6 @@ ul li {
 /* Making sure the carousel text looks good on mobile */
 @media (max-width: 768px) {
     .testimonial-text {
-        font-size: 1rem;
-    }
-}
-
-/* Profile Styling */
-
-/* Profile Page Styling */
-.user-profile-container {
-    background-color: #f9f9f9;
-    padding: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.user-profile-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #d81e5b;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* User Info Card */
-.user-info-card {
-    background-color: #fff;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.user-info-card-body {
-    padding: 20px;
-}
-
-.user-info-text {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-.user-edit-btn {
-    background-color: #d81e5b;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 10px;
-    display: inline-block;
-}
-
-.user-edit-btn:hover {
-    background-color: #c11842;
-    color: #fff;
-    transform: scale(1.05);
-}
-
-/* Pet Profiles */
-.pet-profile-card {
-    background-color: #fff;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.pet-profile-card-body {
-    padding: 20px;
-}
-
-.pet-info {
-    font-size: 1.1rem;
-}
-
-.pet-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.pet-actions a {
-    background-color: #d81e5b;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.pet-actions a:hover {
-    background-color: #c11842;
-}
-
-/* Bookings Section */
-.bookings-card {
-    background-color: #fff;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.bookings-card-body {
-    padding: 20px;
-}
-
-.bookings-list {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-.bookings-list li {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-.bookings-list a {
-    background-color: #d81e5b;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.bookings-list a:hover {
-    background-color: #c11842;
-}
-
-/* Make the page mobile-friendly */
-@media (max-width: 768px) {
-    .user-profile-container {
-        padding: 20px;
-    }
-
-    .user-profile-title {
-        font-size: 2rem;
-    }
-
-    .user-info-text {
-        font-size: 1rem;
-    }
-
-    .pet-info {
-        font-size: 1rem;
-    }
-
-    .pet-actions {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .pet-actions a {
-        width: 100%;
-        text-align: center;
-    }
-
-    .bookings-list li {
         font-size: 1rem;
     }
 }
