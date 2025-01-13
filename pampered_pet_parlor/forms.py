@@ -13,10 +13,14 @@ class BlogPostForm(forms.ModelForm):
         fields = ['title', 'content', 'image']  # Exclude the `author` field
         
 class BookingForm(forms.ModelForm):
+    pet_name = forms.CharField(required=False, max_length=100)
+    pet_breed = forms.CharField(required=False, max_length=100)
+    pet_age = forms.IntegerField(required=False)
+
     class Meta:
         model = Booking
-        fields = ['name', 'email', 'phone', 'breed', 'size', 'date', 'time', 'service', 'notes']
-
+        fields = ['name', 'email', 'phone', 'pet_name', 'pet_breed', 'pet_age', 'date', 'time', 'service', 'notes']
+        
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage

@@ -84,33 +84,34 @@ def logout_view(request):
 
 @login_required
 def book_appointment(request):
-    # Fetch user's pet profile, if they have one
+    # Fetch the user's pet profile if it exists
     pet_profile = PetProfile.objects.filter(user=request.user).first()
 
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.user = request.user  # Associate the booking with the logged-in user
+            booking.user = request.user  # Link the booking to the logged-in user
             booking.save()
-            return redirect('index')  # Redirect to the success page (or wherever you'd like)
+            return redirect('profile')  # Redirect to the user's profile or a success page
     else:
-        # Prepopulate form with existing user data and pet profile (if available)
+        # Prepopulate form with user data
         initial_data = {
-            'name': request.user.username,  # Prepopulate with user's username or other fields
-            'email': request.user.email,    # Prepopulate email
+            'name': request.user.first_name + ' ' + request.user.last_name,
+            'email': request.user.email,
+            'phone': request.user.profile.phone if hasattr(request.user, 'profile') else '',
         }
-        
-        # If there's a pet profile, prepopulate pet details (e.g., pet's name, breed)
+
+        # If there's a pet profile, prepopulate pet details
         if pet_profile:
             initial_data.update({
                 'pet_name': pet_profile.name,
                 'pet_breed': pet_profile.breed,
                 'pet_age': pet_profile.age,
             })
-        
+
         form = BookingForm(initial=initial_data)
-    
+
     return render(request, 'pampered_pet_parlor/book_appointment.html', {'form': form})
 
 def edit_appointment(request, booking_id):
@@ -287,3 +288,16 @@ def edit_profile(request):
     'profile_form': profile_form,
     'phone_form': phone_form,
 })
+
+@login_required
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)  # Ensure it belongs to the user
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')  # Redirect to the profile page
+    else:
+        form = BookingForm(instance=booking)
+
+    return render(request, 'pampered_pet_parlor/edit_booking.html', {'form': form})

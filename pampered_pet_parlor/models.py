@@ -27,7 +27,7 @@ class ContactMessage(models.Model):
 
 #Way to associate booking with user
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link each booking to a user
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=15)
@@ -42,7 +42,7 @@ class Booking(models.Model):
         return f"{self.name} - {self.service} on {self.date} at {self.time}"
 
 class PetProfile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Remove unique=True
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Links pet to user
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=100)
     age = models.IntegerField()

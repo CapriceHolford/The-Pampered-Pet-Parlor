@@ -1,71 +1,107 @@
 {% extends "base.html" %}
 
-{% load static %} 
+{% load static %}
 
 {% block title %}About Us - The Pampered Pet Parlor{% endblock %}
 
 {% block content %}
 
-        <!-- Introduction Section -->
-        <section class="mb-5 center-content">
-            <h3>Welcome to The Pampered Pet Parlor!</h3>
-            <p>At The Pampered Pet Parlor, we provide high-quality grooming services for your pets. Our team is passionate about ensuring that your furry friends leave looking their best and feeling happy.</p>
-            <img src="{% static 'images/intro.jpg' %}" alt="Intro Image" class="intro-img img-fluid rounded shadow-sm">
-        </section>
+<!-- Introduction Section -->
+<section class="mb-5 center-content">
+    <h3>Welcome to The Pampered Pet Parlor!</h3>
+    <p>At The Pampered Pet Parlor, we provide high-quality grooming services for your pets. Our team is passionate about
+        ensuring that your furry friends leave looking their best and feeling happy.</p>
+    <img src="{% static 'images/intro.jpg' %}" alt="Intro Image" class="intro-img img-fluid rounded shadow-sm">
+</section>
 
-        <!-- Mission Section -->
-        <section class="mb-5 center-content">
-            <h3>Our Mission</h3>
-            <p>Our mission is to deliver exceptional grooming experiences while prioritizing your pet's comfort and well-being. We aim to provide the best grooming service tailored to the needs of every pet.</p>
-        </section>
+<!-- Mission Section -->
+<section class="mb-5 center-content">
+    <h3>Our Mission</h3>
+    <p>Our mission is to deliver exceptional grooming experiences while prioritizing your pet's comfort and well-being.
+        We aim to provide the best grooming service tailored to the needs of every pet.</p>
+</section>
 
-        <!-- Meet the Team Section -->
-        <section class="mb-5 center-content">
-            <h3>Meet Our Grooming Experts</h3>
-            <div class="row" >
-                <div class="col-md-4">
-                    <img src="{% static 'images/groomer1.jpg' %}" alt="Groomer 1" class="img-fluid rounded-circle">
-                    <h4> Jessica Booth </h4>
-                    <p>Head Groomer with 10 years of experience in pet care and grooming.</p>
+<!-- Meet the Team Section -->
+<section class="mb-5 center-content">
+    <h3>Meet Our Grooming Experts</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{% static 'images/groomer1.jpg' %}" alt="Groomer 1" class="img-fluid rounded-circle">
+            <h4> Jessica Booth </h4>
+            <p>Head Groomer with 10 years of experience in pet care and grooming.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/groomer2.jpg' %}" alt="Groomer 2" class="img-fluid rounded-circle">
+            <h4> Harriet Charlton</h4>
+            <p>Senior Groomer who loves making pets feel pampered and special.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{% static 'images/groomer3.jpg' %}" alt="Groomer 3" class="img-fluid rounded-circle">
+            <h4>Matthew Williams </h4>
+            <p>Groomer and pet care expert, committed to ensuring every pet's safety and comfort.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="mb-5 center-content">
+    <h3>Our Services</h3>
+    <ul>
+        <li><i class="fas fa-paw"></i> Full Grooming</li>
+        <li><i class="fas fa-paw"></i> Bath and Brush</li>
+        <li><i class="fas fa-paw"></i> Nail Trimming</li>
+        <li><i class="fas fa-paw"></i> Face and Paw Tidy</li>
+        <li><i class="fas fa-paw"></i> Ear Cleaning</li>
+    </ul>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Customer Testimonials</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <!-- 2000 ms = 2 seconds -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <p class="testimonial-text">"The grooming service was exceptional! My dog looks so happy and
+                        clean. Highly recommend!" - Sarah</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="{% static 'images/groomer2.jpg' %}" alt="Groomer 2" class="img-fluid rounded-circle">
-                    <h4> Harriet Charlton</h4>
-                    <p>Senior Groomer who loves making pets feel pampered and special.</p>
+                <div class="carousel-item">
+                    <p class="testimonial-text">"I was so impressed with the care my cat received during her bath
+                        and trim. Great service!" - John</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="{% static 'images/groomer3.jpg' %}" alt="Groomer 3" class="img-fluid rounded-circle">
-                    <h4>Matthew Williams </h4>
-                    <p>Groomer and pet care expert, committed to ensuring every pet's safety and comfort.</p>
+                <div class="carousel-item">
+                    <p class="testimonial-text">"Amazing! The staff is friendly and really understands how to make
+                        my pet feel comfortable!" - Emily</p>
+                </div>
+                <div class="carousel-item">
+                    <p class="testimonial-text">"The grooming exceeded my expectations. My dog is always treated
+                        with care and love!" - Michael</p>
+                </div>
+                <div class="carousel-item">
+                    <p class="testimonial-text">"Best grooming experience we've had! Our pet feels and looks
+                        fantastic!" - Karen</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="mb-5 center-content">
-            <h3>Our Services</h3>
-            <ul>
-                <li><i class="fas fa-paw"></i> Full Grooming</li>
-                <li><i class="fas fa-paw"></i> Bath and Brush</li>
-                <li><i class="fas fa-paw"></i> Nail Trimming</li>
-                <li><i class="fas fa-paw"></i> Face and Paw Tidy</li>
-                <li><i class="fas fa-paw"></i> Ear Cleaning</li>
-            </ul>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="mb-5 center-content">
-            <h3>What Our Clients Say</h3>
-            <blockquote class="blockquote">
-                <p>"The Pampered Pet Parlor did an amazing job on my dog. She came back looking gorgeous, and she was so happy! Highly recommend!"</p>
-                <footer class="blockquote-footer">Sarah Miller</footer>
-            </blockquote>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section class="text-center">
-            <h3>Ready to pamper your pet?</h3>
-            <a href="{% url 'booking' %}" class="btn btn-success">Make a New Booking</a>
-        </section>
+            <!-- Controls (optional) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="text-center">
+    <h3>Ready to pamper your pet?</h3>
+    <a href="{% url 'booking' %}" class="btn btn-success">Make a New Booking</a>
+</section>
+</div>
 {% endblock %}

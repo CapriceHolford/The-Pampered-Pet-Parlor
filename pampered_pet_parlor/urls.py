@@ -25,5 +25,6 @@ urlpatterns = [
     path('profile/delete-pet/<int:pet_id>/', views.delete_pet_profile, name='delete_pet_profile'),
     path('profile/book-appointment/', views.book_appointment, name='book_appointment'),
     path('blog/<int:post_id>/', views.blog_detail, name='blog_detail'),
+    path('edit-booking/<int:booking_id>/', views.edit_booking, name='edit_booking'),
 ]
 
