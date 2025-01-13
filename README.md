@@ -1,131 +1,134 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Caprice Holford,
+The Pampered Pet Parlor
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This is my final project with CodeInstitute, it involves the development of a full-stack web application using the Django Web framework, following Agile methodologies for planning and execution. The application aims to provide an intuitive platform for managing pet grooming services, allowing users to book appointments, manage their profiles, and view posts about past grooms. The website integrates a responsive front-end with custom models to handle user authentication, pet profiles, and booking data, while ensuring accessibility and usability. The project includes database development, CRUD functionality, role-based access control, and notifications, culminating in the deployment of the application to Heroku (a cloud based platform) with a focus on security and performance.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Acknowledgements
 
-`python3 -m http.server`
+ - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
+ - [Font Awesome](https://fontawesome.com/)
+- [Free Pik](https://www.freepik.com/)
+ - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+- [Pexels](https://www.pexels.com/)
+- [Pixabay](https://pixabay.com/)
 
-A blue button should appear to click: _Make Public_,
+## Color Reference
 
-Another blue button should appear to click: _Open Browser_.
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Example Color | ![#5cc8ff](https://via.placeholder.com/10/5cc8ff?text=+) #5cc8ff |
+| Example Color | ![#ead5e6](https://via.placeholder.com/10/ead5e6?text=+) #ead5e6 |
+| Example Color | ![#d81e5b](https://via.placeholder.com/10/d81e5b?text=+) #d81e5b |
+| Example Color | ![#0c2e10](https://via.placeholder.com/10/0c2e10?text=+) #oc2e10 |
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
 
-A blue button should appear to click: _Make Public_,
+![Logo](staticfiles/images/logo1-fotor-2025010215655.png)
+- I created this logo using [chatgpt](https://chatgpt.com/)
 
-Another blue button should appear to click: _Open Browser_.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Features
 
-To log into the Heroku toolbelt CLI:
+### Core Features 
+- Blog Section
+- Booking System
+- Cross platform
+- CRUD Functionality
+- Database Management
+- Deployment 
+- Live previews
+- Notifications
+- Responsive Design
+- Role-Based Access Control
+- User Registration and Authentication
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Additional Features 
+- Light/dark mode toggle
+- Pet Grooming History
+- User Profile Management
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
 
-### Connecting your Mongo database
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
 
-------
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**June 18, 2024,** Add Mongo back into template
+## Tech Stack
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+**Frontend:** HTML, CSS (Bootstrap), JavaScript, FontAwesome
 
-**May 28 2024:** Fix Mongo and Links installs
+**Backend:** Django (Python), Django ORM, SQLite (development)
 
-**April 26 2024:** Update node version to 16
+**Version Control:** Git, GitHub
 
-**September 20 2023:** Update Python version to 3.9.17.
+**Deployment:** Heroku, Whitenoise
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+**Authentication:** Django Allauth
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## FAQ
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### How do I run the project locally?
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Clone the repository: git clone https://github.com/yourusername/yourproject.git
+- Install dependencies: pip install -r requirements.txt
+- Apply database migrations: python manage.py migrate
+- Run the development server: python manage.py runserver
+- Visit http://127.0.0.1:8000 in your web browser.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### How do I add or modify content (like blog posts or services)?
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Blog posts: Blog posts are created by the groomer/admin in the admin panel. Only authorized users with admin privileges can access the blog section to add or edit posts.
+- Services: Services can be added or edited through the admin panel as well. Users with admin privileges can define the grooming services available for booking.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+#### How does user authentication work?
+Users can register, log in, and manage their profiles using the Django Allauth authentication system. Once logged in, users can access features like booking appointments, viewing their profiles, and editing their pet profiles. Groomers and admins have access to additional features such as managing blog posts and services.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### How can I change my profile information?
+Users can edit their profile information, including their email, username, and password, from the profile page. If the user has a pet profile, they can also add, edit, or delete pet profiles from their account settings.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### How can I book an appointment?
+Users can book an appointment by visiting the Booking page. They will need to provide their pet’s details and choose the service they want. The appointment will be stored in the database, and users will receive confirmation.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### Can users with different roles access different sections?
+Yes, the application supports role-based access. Regular users can manage their profiles and book appointments, while groomers and admins have additional privileges such as managing blog posts, editing services, and handling user data.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### How can I test the application?
+You can run the application locally and manually test all the features such as registration, login, profile management, booking an appointment, and editing pet profiles. Additionally, automated tests can be written for Django models, views, and forms to ensure the correct functionality of the application.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+# Lessons Learned During the Project
 
-**How will this affect me?**
+## 1. Full-Stack Development with Django
+Through this project, I learned how to effectively create a full-stack web application using the Django web framework. I gained a deeper understanding of Django's MVC architecture, working with models, views, and templates, and managing databases using Django's ORM.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## 2. Front-End Design and Responsiveness
+I worked with HTML, CSS, and Bootstrap to create responsive, user-friendly designs. This involved using Flexbox and Grid for layout, applying CSS media queries for mobile responsiveness, and ensuring accessibility by following Web Content Accessibility Guidelines (WCAG).
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## 3. Working with Django Models and the ORM
+I designed and implemented custom models for various features of the website, such as user profiles, bookings, and pet profiles. I learned how to create relationships between models using Foreign Keys and ManyToMany fields and how to manage database migrations efficiently.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## 4. CRUD Functionality
+I implemented the ability for users to create, read, update, and delete records, such as adding and editing pet profiles and bookings. I used Django’s ModelForms and validated user inputs to ensure secure and error-free data management.
 
-**So….?**
+## 5. User Authentication and Authorization
+I learned how to implement user authentication using Django Allauth, allowing users to register, log in, and manage their accounts. Additionally, I incorporated role-based access control to restrict certain content, such as pet profiles and bookings, to authenticated users only.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## 6. Agile Methodology for Project Management
+I applied Agile principles by using tools like Trello and GitHub Projects to plan, track, and manage tasks. This included breaking down features into user stories, prioritizing tasks, and using sprints to meet deadlines.
 
-**Can I opt out?**
+## 8. Testing and Debugging
+I practiced testing in Django, including writing unit tests for views, models, and forms. I learned how to use Django’s built-in testing framework and `pytest` to ensure the functionality and security of my application.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## 8. Deployment to Heroku
+I successfully deployed the application to Heroku, ensuring that it was configured for a production environment. This included setting up environment variables for secret keys, using Whitenoise for static file handling, and ensuring the application was secure by turning off DEBUG mode.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## 9. Code Quality and Version Control
+Throughout the project, I followed best practices for code readability, such as consistent naming conventions, proper indentation, and meaningful comments. I also used Git for version control, making regular commits with detailed messages to track progress.
 
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
