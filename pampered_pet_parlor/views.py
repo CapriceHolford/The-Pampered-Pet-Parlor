@@ -301,3 +301,7 @@ def edit_booking(request, booking_id):
         form = BookingForm(instance=booking)
 
     return render(request, 'pampered_pet_parlor/edit_booking.html', {'form': form})
+
+# Terms and Conditions Page 
+def terms_and_conditions(request):
+    return render(request, 'pampered_pet_parlor/terms-and-conditions.html')

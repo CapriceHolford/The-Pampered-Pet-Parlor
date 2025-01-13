@@ -19,11 +19,12 @@ This is my final project with CodeInstitute, it involves the development of a fu
 8. [Lessons Learned](#lessons-learned)
 9. [Testing](#testing)
 10. [Known Issues](#known-issues)
-11. [Acknowledgements](#acknowledgements)
-12. [Color Reference](#color-reference)
-13. [Logo](#logo)
-14. [Draw SQL Board](#draw-sql-board)
-15. [Credits](#credits)
+11. [Lighthouse](#lighthouse)
+12. [Acknowledgements](#acknowledgements)
+13. [Color Reference](#color-reference)
+14. [Logo](#logo)
+15. [Draw SQL Board](#draw-sql-board)
+16. [Credits](#credits)
 
 
 ## User Experience Design
@@ -168,10 +169,14 @@ I successfully deployed the application to Heroku, ensuring that it was configur
 ## 9. Code Quality and Version Control
 Throughout the project, I followed best practices for code readability, such as consistent naming conventions, proper indentation, and meaningful comments. I also used Git for version control, making regular commits with detailed messages to track progress.
 
-
 ## Known Issues
 Appointment Overlaps: Currently, appointments can be booked simultaneously. Future updates will address this with time-slot validation.
 Once appointment is booked, cannot be edited on profile even though the button is there, couldn't figure out how to fix this and ran out of time.
+
+## Lighthouse
+
+<img src="static/images/lighthouse.jpg" alt="lighthouse result" width="600">
+<img src="static/images/lighthousemobile.jpg" alt="lighthouse result mobile" width="600">
 
 ## Acknowledgements
 
@@ -190,14 +195,6 @@ Once appointment is booked, cannot be edited on profile even though the button i
 I used Coolors to figure out what colours I'd like to use on my website. 
 
 <img src="static/images/Colours.png" alt="Logo" width="500">
-
-
-| Colour Name       | HEX Code    | Preview                             |
-|-------------------|-------------|-------------------------------------|
-| Primary Blue      | `#5cc8ff`  | ![#5cc8ff](https://via.placeholder.com/15/5cc8ff/5cc8ff?text=+) |
-| Soft Pink         | `#ead5e6`  | ![#ead5e6](https://via.placeholder.com/15/ead5e6/ead5e6?text=+) |
-| Vibrant Pink      | `#d81e5b`  | ![#d81e5b](https://via.placeholder.com/15/d81e5b/d81e5b?text=+) |
-| Dark Green        | `#0c2e10`  | ![#0c2e10](https://via.placeholder.com/15/0c2e10/0c2e10?text=+) |
 
 ## Logo
 - I used [chatgpt](https://chatgpt.com/) to create this logo

@@ -28,6 +28,7 @@ urlpatterns = [
     path('profile/book-appointment/', views.book_appointment, name='book_appointment'),
     path('blog/<int:post_id>/', views.blog_detail, name='blog_detail'),
     path('edit-booking/<int:booking_id>/', views.edit_booking, name='edit_booking'),
+    path('terms-and-conditions/', views.terms_and_conditions, name='terms-and-conditions'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
