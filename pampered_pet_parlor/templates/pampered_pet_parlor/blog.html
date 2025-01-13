@@ -6,13 +6,13 @@
 <div class="container py-5">
     <h2 class="text-center mb-4">Our Blog</h2>
     <p class="text-center">Check out our recent grooms!</p>
-    
+
     <div class="row">
         {% for post in posts %}
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 {% if post.image %}
-                <img src="{{ post.image.url }}" class="card-img-top blog-post-image" alt="{{ post.title }}">
+                <img src="{{ post.image.url }}" class="card-img-top blog-post-image" alt="{{ post.title }}"> 
                 {% else %}
                 <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Placeholder Image">
                 {% endif %}

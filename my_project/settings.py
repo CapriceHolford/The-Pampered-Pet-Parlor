@@ -12,13 +12,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Quick-start development settings - unsuitable for production
@@ -30,7 +28,7 @@ SECRET_KEY = 'django-insecure-(&^f!**u8&tnmkzs-t*7$h9idf&@n7l%u%#$!_3yzc40)fe1cu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-capriceholf-thepampered-l24nb03lzz1.ws.codeinstitute-ide.net','.herokuapp.com',]
+ALLOWED_HOSTS = ['8000-capriceholf-thepampered-l24nb03lzz1.ws.codeinstitute-ide.net','https://thepamperedpetparlor-e35e108a4b02.herokuapp.com/',]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-capriceholf-thepampered-l24nb03lzz1.ws.codeinstitute-ide.net',
@@ -49,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pampered_pet_parlor',
+    'cloudinary',
+    'cloudinary_storage'
 ]
 
 MIDDLEWARE = [
@@ -178,9 +178,9 @@ ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Redirect after signup
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'your_cloud_name',
-    'API_KEY': 'your_api_key',
-    'API_SECRET': 'your_api_secret',
+   'CLOUD_NAME': 'dtj5m29kc',
+    'API_KEY': '637713175977887',
+   'API_SECRET': '04RRJqSbveBsJYDzunaFCL8rPqo',
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

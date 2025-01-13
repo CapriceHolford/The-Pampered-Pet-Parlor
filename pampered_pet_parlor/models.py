@@ -10,7 +10,7 @@ class BlogPost(models.Model):
     content = models.TextField()
     image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
     created_at = models.DateTimeField(default=now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.title

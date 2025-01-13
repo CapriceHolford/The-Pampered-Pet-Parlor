@@ -4,9 +4,6 @@ from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
 urlpatterns = [
     path('accounts/', include('allauth.urls')),
@@ -32,4 +29,5 @@ urlpatterns = [
     path('blog/<int:post_id>/', views.blog_detail, name='blog_detail'),
     path('edit-booking/<int:booking_id>/', views.edit_booking, name='edit_booking'),
 ]
-
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
